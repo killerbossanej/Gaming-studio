@@ -6,13 +6,17 @@
 /* moja koda*/
 
 
+
 body{
   height:100vh;
   background-color: white;
+  margin: 0;
+  font-family: 'Robot', sans-serif;
+  overflow-x:hidden;
 
 }
 
-*{  
+* {
   margin:0;
   padding:0;
   box-sizing: border-box;
@@ -22,42 +26,121 @@ body{
 
 
 
-nav{                       /*style elemente nav uli li */
+nav{                       /*style elemente nav uli li za menu*/
 position:absolute;
 width:100%;
 top:0;
 left:0;
-padding:20px 8%;
+padding:20px 0%;
 display:flex;
 align-items:center;
 justify-content:left;
 
 }
+ 
 
-nav .logo{
-      width:80px;
+
+
+
+.logo {
+      width:100px;
+      margin: 20px;
       border-radius: 40px;
         float:left;
         margin-right:1500px;
+        cursor: pointer;
+        
 }
 
-nav ul li{
-    list-style:none;
-    display:inline-block;
-    margin-left:40px;
+nav ul{
+  -webkit-text-stroke:1px rgb(202, 16, 240) ;
+  color:transparent;
+     width:100%;
+     margin-top: 10px;
 }
 
-nav ul li a{
-  text-decoration:none;
-  color:white;
-  font-size:17px;
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin:20px 30px;
+  color: #fff;
+}
+
+nav ul li a {
+  display: inline-block;
+  list-style: none;
+  margin:20px 30px;
+  color: #fff;
+}
+
+
+
+ul li :hover{                 /*style elemente nav uli li   tu konca*/
+   color:rgb(181, 6, 204);
 
 }
 
-ul li a:hover{                 /*style elemente nav uli li   tu konca*/
-   color:aqua;
-
+header{
+top: 0;
+left:0;
+display:flex;
+justify-content:space-between ;
+align-items: center;
+transition:0.6s;
+padding:40px 100px ;
+z-index:100000;
 }
+
+header .logoo{
+  position: relative;
+  font-weight: 700;
+  color: azure;
+  text-decoration: none;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing:2px ;
+}
+
+header ul{
+  position: relative;
+  display:flex ;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li {
+  position: relative;
+  list-style: none;
+}
+
+header ul li a{
+  position: relative;
+ margin: 0 15px;
+ text-decoration:none ;
+ color: azure;
+ letter-spacing: 2px;
+ font-weight: 500px;
+ transition: 0.6s;
+}
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+a:link, a:visited {
+        
+  color: rgb(248, 3, 248);
+  text-align: center;
+  text-decoration: none;
+  
+}
+
+a:hover, a:active {
+  text-decoration: none;
+}
+
+
 
 .content{
 
@@ -68,34 +151,157 @@ ul li a:hover{                 /*style elemente nav uli li   tu konca*/
   font-size:200px;
   color:whitesmoke ;
   font-weight:600;
-
+  user-select: none;
+  font-style: italic;
+  display: inline;
 }
 
-.content a{                                        /*content calsss*/
-text-decoration:none;
-display: inline-block;
-color: white;
-font-size:30px;
-border:2px solid white;
-padding:14px 70px;
-border-radius: 70px;
-margin-top: 20px;
 
+
+
+.gaming {
+  -webkit-text-stroke:2px rgb(1, 255, 200) ;
+  color:transparent;
+  
 }
 
-.content a:hover{ 
-  -webkit-text-stroke:0.5px rgb(255, 255, 255) ;
-  color:transparent
+.studio{
+ -webkit-text-stroke:2px rgb(236, 9, 236) ;
+  color:transparent;
+  
+  
 }
+
 
 .content h1:hover{
--webkit-text-stroke:2px aqua ;
-color:transparent
+color:transparent;
 
+}
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! KODA ZA EXPLORE GUMB !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 
-.backimage{  
+.buttons {
+  margin-top: 50px;
+  text-align: center;
+  border-radius: 30px;
+}
+
+.blob-btn { /* to nevele nič*/
+  z-index: 1;
+  position: relative;
+  padding: 20px 46px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(4, 218, 247);
+  font-size: 16px;
+  font-weight: bold;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  transition: color 0.5s;
+  cursor: pointer;
+  border-radius: 30px;
+}
+.blob-btn a:before { /* to je border jebemte*/
+  content: "";
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 0px solid rgb(0, 0, 0);
+  border-radius: 30px;
+}
+.blob-btn a:after {
+  content: "";
+  z-index: -2;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s 0.2s;
+  border-radius: 30px;
+  font-style: italic;
+}
+.blob-btn a:hover { /*beseda explore se pobarva*/
+  color: rgb(2, 108, 247);
+  border-radius: 30px;
+}
+.blob-btn :hover a:after {
+  transition: all 0.3s;
+  left: 0;
+  top: 0;
+  border-radius: 30px;
+}
+.blob-btn__inner { /* odzadje se spremeni*/
+  z-index: -1;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  background: #2cb8f0;
+}
+.blob-btn__blobs {
+  position: relative;
+  display: block;
+  height: 100%;
+  filter: url("#goo");
+}
+.blob-btn__blob {   /* to je trenzišn*/
+  position: absolute;
+  top: 2px;
+  width: 25%;
+  height: 100%;
+  background: rgb(230, 57, 192);
+  border-radius: 100%;
+  transform: translate3d(0, 150%, 0) scale(1.7);
+  transition: transform 0.45s;
+}
+@supports (filter: url("#goo")) {
+  .blob-btn__blob {
+    transform: translate3d(0, 150%, 0) scale(1.4);
+  }
+}
+.blob-btn__blob:nth-child(1) {
+  left: 0%;
+  transition-delay: 0s;
+}
+.blob-btn__blob:nth-child(2) {
+  left: 30%;
+  transition-delay: 0.08s;
+}
+.blob-btn__blob:nth-child(3) {
+  left: 60%;
+  transition-delay: 0.16s;
+}
+.blob-btn__blob:nth-child(4) {
+  left: 90%;
+  transition-delay: 0.24s;
+}
+.blob-btn:hover .blob-btn__blob {
+  transform: translateZ(0) scale(1.7);
+}
+@supports (filter: url("#goo")) {
+  .blob-btn:hover .blob-btn__blob {
+    transform: translateZ(0) scale(1.4);
+  }
+}
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! KONEC KODE ZA EXPLORE GUMB !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+.backimage{
 position:absolute;
 width:100%;
 height:500px;
@@ -106,11 +312,6 @@ background-attachment: fixed;
 
 
 }
-
-
-  
-
-
 .hero {
   width:100%;
   height:100vh;
@@ -139,18 +340,19 @@ background-attachment: fixed;
 
 
 .cocain{
+  position: relative;
   width:100%;
-  height:100%;
+  height:100vh;
   background-position:center ;
   background-size:cover ;
   background-image:url(images/pexels-photo-3165335.jpeg);
   background-attachment: fixed;
-  
+
 }
 
-.underimage{
+.underimage {
   width:100%;
-  height:100%;
+  height:101%;
   background-position:center ;
   background-size:cover ;
   background-image:url(images/pexels-pixabay-159204.jpg);
@@ -159,6 +361,44 @@ background-attachment: fixed;
 }
 
 
+
+nav.sticky{
+  position: fixed;
+  height:5vh;
+  top: 0;
+  left: 0;
+  background:grey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav.sticky ul{
+  width:auto;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!ZAČETEK YELLOW GANG NASLOV !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+.yellowgang{ 
+  text-align: center;
+  padding: 550px 0;
+  
+}
+
+.yellowgang h1{
+  font-size:200px;
+  color:rgb(255, 230, 1) ;
+  font-weight:600;
+  display: inline ;
+  user-select: none;
+}
+
+.yellowgang h1:hover{
+  -webkit-text-stroke:2px rgb(230, 255, 7) ;
+  color:transparent
+ }
+
+ /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!KONEC YELLOW GANG NASLOV !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
 
 

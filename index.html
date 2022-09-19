@@ -1,54 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="viewport"  content="width=device-width, initial-scale=1.0">
-    <title>Yellow Gang</title>
+<meta name="viewport"  content="width=device-width, initial-scale=1.0">
+    <title>Gaming Studio</title>
     <link rel="stylesheet" href="style.css">
-   </head>
-    <body>
-      <div class="cocain">
+   
     
-     
+   </head>
+  <body>
+    <script src="js/zmenu.js"></script>
+    
+    <div class="cocain">
+
+
       <div class="heroo">
         
-        <nav>
-          <img src="images/ca5f0ce003411843d53ad4489cb2327a.jpg"  class="logo" >
         
-         
-           
-           <ul class="buzi">
+        <div class="header">
+        <nav id="navbar">
+          <img src="images/ca5f0ce003411843d53ad4489cb2327a.jpg"  class="logo" >
+        <header class="logoo">
+           <ul id="menu">
             <li><a href="index.html">HOME</a></li> 
             <li><a href="profile.html">PROFILE</a></li> 
-            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="contact.html">CONTACTS</a></li>
             <li><a href="About.html">ABOUT</a></li>
           </ul>
           </nav>
-     
-         <div class="content">
-          <h1>Gaming Studio</h1>
-          <a href="https://www.google.com/maps/place/2250+Ptuj/@46.4222524,15.8358117,13z/data=!3m1!4b1!4m5!3m4!1s0x476f669e5ce0430d:0x400f81c823ff4b0!8m2!3d46.4199535!4d15.8696884" target="_blank">Explore</a>
-        
+          </div> 
+          
+          
+         
+      
+         <div class="content"> 
+          <h1 class="gaming"><font color="#d024e3"></font>Gaming</font></h1> <h1 class="studio"><font color="#d024e3"></font>Studio</font></h1>
+          
+          <div class="buttons">
+            <button class="blob-btn">
+              <a href="https://www.google.com/maps/place/2250+Ptuj/@46.4222524,15.8358117,13z/data=!3m1!4b1!4m5!3m4!1s0x476f669e5ce0430d:0x400f81c823ff4b0!8m2!3d46.4199535!4d15.8696884" target="_blank"><i>Explore</i></a>
+              <span class="blob-btn__inner">
+                <span class="blob-btn__blobs">
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                  <span class="blob-btn__blob"></span>
+                </span>
+              </span>
+            </button>
+            <br/>
+          
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+              <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+                <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+              </filter>
+            </defs>
+          </svg>
+
            </div>
          </div>
+
          </div>
-      </body>
-</html>
+         <script>
+               var navbar=document.getElementById("navbar");
+               var menu=document.getElementById("menu");
 
-<body>
-  <div class="underimage">
-  
-  <ul><font size="+2">This is bigger text.
-    <font color="white">
-<li>ke ze</li>
-<li>ke ze</li>
-<li>ke ze</li>
-<li>ke ze</li>
-</font>
-</ul>
-  
-
-
+               window.onscroll= function(){
+                    if(window.pageYOffset>=menu.offsetTop){
+                      navbar.classList.add("sticky");
+                    }
+                   else{
+                       navbar.classList.remove("sticky");
+                   }
+               }
+          </script>
+    <div class="underimage">
+<div class="heroo">
+<nav>
+      </nav>
+  <div class="yellowgang">
+      <h1>Yellow Gang </h1>
 </div>
-</body>
+</div>
+</nav>
+</div>  
+
+</html>
 
 
